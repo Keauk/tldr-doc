@@ -8,9 +8,10 @@ class FakeSummarizeService extends SummarizeService {
         super({generate: async () => ''});
     }
 
-    async summarize(text: string, maxWords?: number): Promise<{ summary: string }> {
+    async summarize(text: string, maxWords?: number, language?: string): Promise<{ summary: string }> {
         void text;
         void maxWords;
+        void language;
         return {summary: 'Fixed fake summary.'};
     }
 }

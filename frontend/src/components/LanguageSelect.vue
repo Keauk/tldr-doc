@@ -30,10 +30,9 @@ const value = computed({
       class="w-full rounded-lg border p-3 shadow-sm focus:outline-none focus:ring-2"
       :class="['border-sky focus:ring-primary/60 bg-white']"
     >
-      <option value="" disabled>Select language (placeholder)</option>
-      <option value="en">English (placeholder)</option>
-      <option value="es">Spanish (placeholder)</option>
-      <option value="fr">French (placeholder)</option>
+      <option value="en">English</option>
+      <option value="fi">Finnish</option>
+      <option value="nl">Dutch</option>
     </select>
   </div>
 </template>

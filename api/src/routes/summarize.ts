@@ -17,6 +17,7 @@ const createSummarizeRoute = ({summarizeService}: SummarizeRouteDeps): FastifyPl
                         properties: {
                             text: {type: 'string', minLength: 1},
                             maxWords: {type: 'number', minimum: 1},
+                            language: {type: 'string', enum: ['en', 'fi', 'nl']},
                         },
                         additionalProperties: false,
                     },
@@ -33,8 +34,8 @@ const createSummarizeRoute = ({summarizeService}: SummarizeRouteDeps): FastifyPl
                 },
             },
             async (request) => {
-                const {text, maxWords} = request.body as { text: string; maxWords?: number };
-                return await summarizeService.summarize(text, maxWords);
+                const {text, maxWords, language} = request.body as { text: string; maxWords?: number; language?: 'en' | 'fi' | 'nl' };
+                return await summarizeService.summarize(text, maxWords, language);
             }
         );
     };
