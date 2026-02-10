@@ -54,7 +54,7 @@ async function onSubmit() {
     <div class="mx-auto max-w-3xl px-4">
       <header class="mb-8 text-center">
         <h1 class="text-3xl font-extrabold" :class="'text-primary'">TLDR Doctor</h1>
-        <p class="mt-2 text-sm" :class="'text-muted'">Paste your transcript, choose a language, and generate a concise
+        <p class="mt-2 text-sm" :class="'text-slate-800'">Paste your transcript, choose a language, and generate a concise
           summary.</p>
       </header>
 
