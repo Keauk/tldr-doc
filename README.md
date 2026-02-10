@@ -14,6 +14,26 @@ Supported languages: English, Finnish, Dutch, Swedish.
 ## Local Setup (no deployment)
 This project runs fully on your machine: a Fastify backend API and a Vite-based Vue frontend.
 
+### LLM Setup (Required prerequisite)
+
+This project requires a locally running language model via Ollama. Install Ollama and download the model before starting the backend.
+
+#### Install Ollama
+```sh
+curl -fsSL https://ollama.com/install.sh | sh
+```
+
+#### Verify installation
+```sh
+ollama --version
+```
+
+#### Start Ollama and download the model
+```sh
+ollama serve
+ollama pull llama3.2:3b
+```
+
 ### Backend
 From the `api/` directory:
 
