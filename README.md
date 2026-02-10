@@ -1,18 +1,51 @@
-# TL;DR Doc
+# TLDR Doctor
 
-TL;DR Doc is a small web application that uses a locally hosted language model
-to generate a single-paragraph summary of medical transcripts in a selected
-language.
+TLDR Doctor is a small web application that summarizes medical transcripts into a concise single paragraph using a locally hosted language model via the backend API. Paste text, pick a language, and get a short summary.
 
-## Stack
-- Frontend: Vite, Vue, TypeScript, Tailwind CSS
-- Backend: Fastify, TypeScript, Ollama
+## Features
+- Summarization of pasted transcripts into a short paragraph
+- Language selection for output
+- Summary persists across page refresh using browser local storage
 
-## Local Development
-This project runs fully locally.
+Supported languages: English, Finnish, Dutch, Swedish.
 
-- The backend exposes an API for summarization.
+## Local Setup (no deployment)
+This project runs fully on your machine: a Fastify backend API and a Vite-based Vue frontend.
+
+### Backend
+From the `api/` directory:
+
+```sh
+# 1) Install
+npm install
+
+# 2) Build (TypeScript → JS)
+npm run build
+
+# 3) Run the built server
+npm start
+
+# Optional: run in watch mode during development
+npm run dev
+```
+
+### Frontend
+From the `frontend/` directory:
+
+```sh
+# 1) Install
+npm install
+
+# 2) Start dev server (hot reload)
+npm run dev
+
+# 3) Build for production
+npm run build
+
+# 4) Preview the built site
+npm run preview
+```
+
+Notes
 - The frontend communicates with the backend over HTTP.
-- The language model is run locally using Ollama.
-
-Detailed setup instructions will be added later.
+- The last generated summary is restored after refresh via `localStorage`; pressing the Summarize button creates a new summary and updates the stored value.
