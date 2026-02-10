@@ -8,7 +8,7 @@ import SummaryCard from '../components/SummaryCard.vue'
 import { summarize } from '../services/summarizeApi'
 
 const text = ref('')
-const language = ref('')
+const language = ref('en')
 const loading = ref(false)
 const error = ref<string | null>(null)
 const summary = ref('')
