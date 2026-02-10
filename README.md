@@ -17,37 +17,50 @@ This project runs fully on your machine: a Fastify backend API and a Vite-based 
 ### Backend
 From the `api/` directory:
 
+#### Installs all Node dependencies
 ```sh
-# 1) Install
 npm install
+```
 
-# 2) Build (TypeScript → JS)
-npm run build
-
-# 3) Run the built server
-npm start
-
-# Optional: run in watch mode during development
+#### Starts the development server with hot reload
+```sh
 npm run dev
+```
+
+#### Builds a production bundle
+```sh
+npm run build
+```
+
+#### Locally previews the production build
+```sh
+npm run preview
 ```
 
 ### Frontend
 From the `frontend/` directory:
 
+#### Installs all Node dependencies
 ```sh
-# 1) Install
 npm install
-
-# 2) Start dev server (hot reload)
-npm run dev
-
-# 3) Build for production
-npm run build
-
-# 4) Preview the built site
-npm run preview
 ```
 
-Notes
+#### Compiles TypeScript to JavaScript
+```sh
+npm run build
+```
+
+#### Starts the built server
+```sh
+npm start
+```
+
+#### Starts dev mode with file watching
+```sh
+npm run dev
+```
+
+
+## Notes
 - The frontend communicates with the backend over HTTP.
 - The last generated summary is restored after refresh via `localStorage`; pressing the Summarize button creates a new summary and updates the stored value.
