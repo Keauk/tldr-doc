@@ -1,0 +1,14 @@
+# Root ignore rules for the whole repository
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment files
+.env
+.env.*.local
+
+# IDE settings
+.idea/
