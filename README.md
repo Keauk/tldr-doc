@@ -2,6 +2,8 @@
 
 TLDR Doctor is a small web application that summarizes medical transcripts into a concise single paragraph using a locally hosted language model via the backend API. Paste text, pick a language, and get a short summary.
 
+![TLDR Doctor screenshot](./demo-screenshot.png)
+
 ## Features
 - Summarization of pasted transcripts into a short paragraph
 - Language selection for output
