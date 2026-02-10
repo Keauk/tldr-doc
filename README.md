@@ -79,8 +79,3 @@ npm start
 ```sh
 npm run dev
 ```
-
-
-## Notes
-- The frontend communicates with the backend over HTTP.
-- The last generated summary is restored after refresh via `localStorage`; pressing the Summarize button creates a new summary and updates the stored value.
