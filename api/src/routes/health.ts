@@ -1,6 +1,5 @@
 import {FastifyPluginAsync} from 'fastify';
 
-// Exposes a simple readiness check used by the frontend/dev tooling.
 const healthRoute: FastifyPluginAsync = async (app) => {
     app.get('/health', () => {
         return {

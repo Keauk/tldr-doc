@@ -1,13 +1,26 @@
 import {beforeAll, afterAll, describe, it, expect} from 'vitest';
 import type {FastifyInstance} from 'fastify';
-import {buildServer} from '../src/server';
+import {buildServer} from '../../src/server';
+import {SummarizeService} from '../../src/services/summarize';
+
+class FakeSummarizeService extends SummarizeService {
+    constructor() {
+        super({generate: async () => ''});
+    }
+
+    async summarize(text: string, maxWords?: number): Promise<{ summary: string }> {
+        void text;
+        void maxWords;
+        return {summary: 'Fixed fake summary.'};
+    }
+}
 
 type SummarizeResponse = { summary: string };
 
 let app: FastifyInstance;
 
 beforeAll(async () => {
-    app = await buildServer();
+    app = await buildServer({summarizeService: new FakeSummarizeService()});
 });
 
 afterAll(async () => {
@@ -16,8 +29,7 @@ afterAll(async () => {
 
 describe('POST /summarize', () => {
 
-    // TODO: Adjust this test-case when LLM has been wired.
-    it('returns placeholder summary', async () => {
+    it('returns a summary via injected service (no network)', async () => {
         const res = await app.inject({
             method: 'POST',
             url: '/summarize',
@@ -27,7 +39,7 @@ describe('POST /summarize', () => {
         const body = res.json() as SummarizeResponse;
 
         expect(res.statusCode).toBe(200);
-        expect(body).toEqual({summary: 'Placeholder summary.'});
+        expect(body).toEqual({summary: 'Fixed fake summary.'});
     });
 
     it('rejects missing text', async () => {
