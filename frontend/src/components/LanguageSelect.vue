@@ -33,6 +33,7 @@ const value = computed({
       <option value="en">English</option>
       <option value="fi">Finnish</option>
       <option value="nl">Dutch</option>
+      <option value="sv">Swedish</option>
     </select>
   </div>
 </template>

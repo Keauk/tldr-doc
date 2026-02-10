@@ -17,7 +17,7 @@ const createSummarizeRoute = ({summarizeService}: SummarizeRouteDeps): FastifyPl
                         properties: {
                             text: {type: 'string', minLength: 1},
                             maxWords: {type: 'number', minimum: 1},
-                            language: {type: 'string', enum: ['en', 'fi', 'nl']},
+                            language: {type: 'string', enum: ['en', 'fi', 'nl', 'sv']},
                         },
                         additionalProperties: false,
                     },

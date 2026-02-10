@@ -6,6 +6,7 @@ const LANGUAGES = {
     en: 'English',
     fi: 'Finnish',
     nl: 'Dutch',
+    sv: 'Swedish',
 } as const
 
 type LanguageCode = keyof typeof LANGUAGES
